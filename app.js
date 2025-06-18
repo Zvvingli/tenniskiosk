@@ -1,12 +1,8 @@
 // Hole dir aus dem globalen supabase-Objekt die createClient-Funktion
 const { createClient } = supabase;
 
-// Deine Supabase-Projekt-Daten
-const SUPABASE_URL = 'https://your-project.supabase.co';
-const SUPABASE_ANON_KEY = 'your-anon-key';
-
 // Initialisiere den Client
-const client = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const client = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_ANON_KEY);
 
 // LOGIN
 document.getElementById('login-form').addEventListener('submit', async (e) => {
